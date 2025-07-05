@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smit Roy | Developer Profile</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f4f4f4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      border-radius: 18px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+      animation: fadeSlideIn 1.2s ease;
+    }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(90deg, #00eaff, #00ffc8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: #b0eaff;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .section {
+      margin: 2.5rem 0;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      border-left: 6px solid #00ffc8;
+      padding-left: 12px;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .section li {
+      margin: 0.5rem 0;
+      padding-left: 0.6rem;
+      position: relative;
+    }
+
+    .section li::before {
+      content: "\2022";
+      color: #00ffc8;
+      font-weight: bold;
+      position: absolute;
+      left: -1rem;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: #00ffc8;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #00ffc8;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: #00ffc8;
+      color: #141e30;
+      box-shadow: 0 0 15px #00ffc8;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-top: 2.5rem;
+      color: #999;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      .tagline {
+        font-size: 1.1rem;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <div class="container">
+    <h1>Hi, I'm Smit Roy</h1>
+    <p class="tagline">Aspiring Software & Backend Developer | MCA '27 (CU) | Tech Explorer</p>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>I’m a 22-year-old full stack development student from Kolkata, currently pursuing my MCA from Chandigarh University. I live and breathe technology, and when I'm not writing code, I'm either learning something new about software development or enjoying a hot cup of coffee while sketching my next idea. I believe that clean code, continuous learning, and real-world application form the holy trinity of great development.</p>
+    </div>
+
+    <div class="section">
+      <h2>Career Goals</h2>
+      <ul>
+        <li>Land a challenging software or backend development role</li>
+        <li>Master Java, Python, and Data Structures & Algorithms</li>
+        <li>Build polished, real-world projects and contribute to open source</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Current Skills</h2>
+      <ul>
+        <li>C, C++ (Intermediate proficiency)</li>
+        <li>Java, Python (Currently learning and implementing)</li>
+        <li>SQL & NoSQL databases (Foundational knowledge)</li>
+        <li>HTML, CSS, JavaScript (Front-end fundamentals)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Academic Curriculum Highlights</h2>
+      <ul>
+        <li>Web Programming, Python, Advanced Database Systems</li>
+        <li>Data Structures & Algorithms, Software Testing, Cybersecurity</li>
+        <li>HTML, CSS, JavaScript, Git, Jenkins, Docker</li>
+        <li>ReactJS, Node.js, REST APIs, DevOps Tools</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Let's Connect</h2>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/smitroy22" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">GitHub</a>
+        <a href="http://code-of-clarity.great-site.net" target="_blank">Portfolio</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Smit Roy | Built with 💻 and ☕
+    </div>
+  </div>
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
