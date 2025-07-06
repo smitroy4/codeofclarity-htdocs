@@ -1,1 +1,1 @@
-# codeofclarity-htdocs
+# codeofclarity.rf.gd-htdocs
