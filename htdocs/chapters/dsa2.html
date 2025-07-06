@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time and Space Complexity - CodeOfClarity</title>
+  <style>
+   html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 320vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000000;
+      color: #e7caca;
+      line-height: 1.7;
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    body {
+      padding: 2rem;
+    }
+
+    h1, h2, h3, h4 {
+      color: #00ffc8;
+    }
+
+    a {
+      color: #90caf9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 2rem 0;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #00ffc8;
+      border-radius: 10px;
+    }
+        pre, code {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-size: 16px;
+      padding: 1rem;
+      border-radius: 8px;
+      display: block;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Time Complexity and Space Complexity</h1>
+  <p><strong>Last Updated:</strong> 05 July, 2025</p>
+
+  <section>
+    <h2>Introduction</h2>
+    <p>In software development, multiple algorithms can solve the same problem using different approaches. To determine the most efficient solution, we analyze their performance using <strong>time complexity</strong> and <strong>space complexity</strong>. These complexities measure the growth of resources (time and memory) required by an algorithm as the input size increases.</p>
+    <ul>
+      <li>Independent of the machine or hardware configuration</li>
+      <li>Directly related to the number of inputs</li>
+      <li>Helps compare and distinguish between algorithms unambiguously</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Time Complexity</h2>
+    <p>Time complexity quantifies the number of fundamental operations executed by an algorithm as a function of input size. It provides a way to evaluate algorithm efficiency regardless of the underlying hardware.</p>
+
+    <h3>Example 1: Constant Time Complexity</h3>
+    <pre><code>Algorithm ADD_SCALAR(A, B):
+  C &lt;- A + B
+  return C</code></pre>
+    <p>Since this algorithm performs only one addition, the time complexity is <strong>O(1)</strong>.</p>
+
+    <h3>Example 2: Quadratic Time Complexity</h3>
+    <p>Finding a pair in an array that sums to a specific value:</p>
+    <pre><code>for (int i = 0; i &lt; n; i++)
+  for (int j = 0; j &lt; n; j++)
+    if (i != j &amp;&amp; a[i] + a[j] == z)
+      return true;
+return false;</code></pre>
+
+    <p>In the worst case, the outer loop runs <em>n</em> times and the inner loop also runs <em>n</em> times, leading to a total of <strong>O(n²)</strong> operations.</p>
+
+    <h3>Code Example:</h3>
+    <pre><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+bool findPair(int a[], int n, int z) {
+    for (int i = 0; i &lt; n; i++)
+        for (int j = 0; j &lt; n; j++)
+            if (i != j &amp;&amp; a[i] + a[j] == z)
+                return true;
+    return false;
+}
+
+int main() {
+    int a[] = { 1, -2, 1, 0, 5 };
+    int z = 0;
+    int n = sizeof(a) / sizeof(a[0]);
+    cout &lt;&lt; (findPair(a, n, z) ? "True" : "False");
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong> False</p>
+
+    <h3>Example 3: Logarithmic Decrease in Loop</h3>
+    <pre><code>count = 0
+for (int i = N; i &gt; 0; i /= 2)
+  for (int j = 0; j &lt; i; j++)
+    count++;</code></pre>
+    <p>This results in <strong>O(N)</strong> time complexity since the count runs N + N/2 + N/4 + ... ≈ 2N operations.</p>
+
+    <h3>Common Time Complexities and Acceptable Ranges</h3>
+    <table border="1" cellpadding="8">
+      <thead>
+        <tr><th>Input Length</th><th>Worst Accepted Time Complexity</th><th>Common Techniques</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>10–12</td><td>O(N!)</td><td>Recursion, Backtracking</td></tr>
+        <tr><td>18–22</td><td>O(2<sup>N</sup> * N)</td><td>Bitmasking, Recursion</td></tr>
+        <tr><td>30–40</td><td>O(2<sup>N/2</sup> * N)</td><td>Meet in the Middle</td></tr>
+        <tr><td>100</td><td>O(N⁴)</td><td>Brute Force, DP</td></tr>
+        <tr><td>400</td><td>O(N³)</td><td>DP, Constructive</td></tr>
+        <tr><td>2K</td><td>O(N² * log N)</td><td>Divide and Conquer, Sorting</td></tr>
+        <tr><td>10K</td><td>O(N²)</td><td>Graphs, Trees</td></tr>
+        <tr><td>1M</td><td>O(N log N)</td><td>Efficient Sorting</td></tr>
+        <tr><td>100M</td><td>O(N), O(log N), O(1)</td><td>Mathematical, Greedy</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Space Complexity</h2>
+    <p>Space complexity refers to the total amount of memory required by an algorithm to run as a function of the input size. It accounts for all memory required by variables, constants, data structures, function calls, and more.</p>
+
+    <h3>Components of Space Complexity</h3>
+    <ul>
+      <li><strong>Fixed part:</strong> Independent of input size (instructions, variables).</li>
+      <li><strong>Variable part:</strong> Dependent on input (arrays, recursion stack, etc.).</li>
+    </ul>
+
+    <h3>Example: Constant Space</h3>
+    <pre><code>Algorithm ADD_SCALAR(A, B):
+  C &lt;- A + B
+  return C</code></pre>
+    <p>This algorithm uses only one extra variable. Therefore, the space complexity is <strong>O(1)</strong>.</p>
+
+    <h3>Example: Frequency Count</h3>
+    <pre><code>int freq[n];
+int a[n];
+for (int i = 0; i &lt; n; i++) {
+  cin &gt;&gt; a[i];
+  freq[a[i]]++;
+}</code></pre>
+
+    <h3>C++ Implementation:</h3>
+    <pre><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+void countFreq(int arr[], int n) {
+  unordered_map&lt;int, int&gt; freq;
+  for (int i = 0; i &lt; n; i++) freq[arr[i]]++;
+  for (auto x : freq)
+    cout &lt;&lt; x.first &lt;&lt; " " &lt;&lt; x.second &lt;&lt; endl;
+}
+
+int main() {
+  int arr[] = {10, 20, 20, 10, 10, 20, 5, 20};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  countFreq(arr, n);
+  return 0;
+}</code></pre>
+    <p><strong>Output:</strong><br>5 1<br>20 4<br>10 3</p>
+
+    <p>In this example, the auxiliary space (i.e., extra space apart from input) is used for the <code>freq</code> map. Hence, space complexity is <strong>O(N)</strong>.</p>
+  </section>
+
+  <section>
+    <h2>Conclusion</h2>
+    <p>Understanding time and space complexity is critical to developing efficient and scalable algorithms. It allows developers to write code that performs well in real-world applications, irrespective of system configuration. Every algorithm must be analyzed with respect to its input size, and complexities guide us in choosing the right one for specific problems.</p>
+    <p>All content is crafted and maintained by <strong>CodeOfClarity</strong> to ensure quality learning experiences in data structures and algorithms.</p>
+  </section>
+</body>
+
+</html>

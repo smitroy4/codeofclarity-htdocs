@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structures and Algorithms - CodeOfClarity</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 320vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000000;
+      color: #e7caca;
+      line-height: 1.7;
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    body {
+      padding: 2rem;
+    }
+
+    h1, h2, h3, h4 {
+      color: #00ffc8;
+    }
+
+    a {
+      color: #90caf9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 2rem 0;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #00ffc8;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+ <h1>Types of Asymptotic Notations in Algorithm Complexity Analysis</h1>
+  <p><strong>Last Updated:</strong> 05 July, 2025</p>
+
+  <section>
+    <h1>Introduction</h1>
+    <p>
+      In algorithm design and analysis, it's not always feasible or meaningful to evaluate performance based solely on real-world execution time. Execution time varies depending on system configuration, hardware, compiler optimizations, and countless other factors. To overcome this, <strong>asymptotic analysis</strong> is used — a method of evaluating an algorithm’s efficiency based on input size, while abstracting away machine-specific details.
+    </p>
+    <p>
+      To conduct this analysis effectively, <strong>Asymptotic Notations</strong> are used. These mathematical tools help express the <strong>time or space complexity</strong> of an algorithm in a form that shows how it behaves as the input size approaches infinity.
+    </p>
+  </section>
+
+  <section>
+    <h2>What Are Asymptotic Notations?</h2>
+    <p>
+      Asymptotic Notations allow developers and engineers to mathematically express the runtime characteristics of an algorithm. These notations are central to <strong>complexity analysis</strong>, providing a standardized way to:
+    </p>
+    <ul>
+      <li>Evaluate how an algorithm’s performance scales with input size</li>
+      <li>Compare the efficiency of multiple algorithms</li>
+      <li>Identify bottlenecks in algorithm design</li>
+      <li>Abstract away the effect of hardware or language-specific implementations</li>
+    </ul>
+    <p>
+      There are <strong>three primary types</strong> of asymptotic notations:
+    </p>
+    <ol>
+      <li>Theta Notation (Θ)</li>
+      <li>Big-O Notation (O)</li>
+      <li>Omega Notation (Ω)</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>1. Theta Notation (Θ-Notation)</h2>
+    <h3>Average Case Complexity – Exact Bound</h3>
+    <p>
+      Theta notation provides a <strong>tight bound</strong> on the running time of an algorithm. It defines both an upper and lower limit, tightly capturing the average behavior of an algorithm.
+    </p>
+    <p>
+      A function f(n) is said to be Θ(g(n)) if there exist positive constants <em>c₁</em>, <em>c₂</em>, and <em>n₀</em> such that:
+    </p>
+    <pre>
+0 ≤ c₁ · g(n) ≤ f(n) ≤ c₂ · g(n) for all n ≥ n₀
+    </pre>
+    <p>
+      <strong>Examples:</strong>
+    </p>
+    <ul>
+      <li>Θ(1): { 100, log(2000), 10⁴ }</li>
+      <li>Θ(n): { n/4, 2n + 3, n/100 + log n }</li>
+      <li>Θ(n²): { n² + n, 2n², n² + log n }</li>
+    </ul>
+    <p><strong>Note:</strong> Θ provides exact bounds.</p>
+  </section>
+
+  <section>
+    <h2>2. Big-O Notation (O-Notation)</h2>
+    <h3>Worst Case Complexity – Upper Bound</h3>
+    <p>
+      Big-O notation describes the <strong>worst-case performance</strong> of an algorithm. It provides an upper limit, ensuring the algorithm doesn’t exceed a certain threshold.
+    </p>
+    <p>
+      A function f(n) is in O(g(n)) if there exist constants <em>c</em> and <em>n₀</em> such that:
+    </p>
+    <pre>
+0 ≤ f(n) ≤ c · g(n) for all n ≥ n₀
+    </pre>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li>O(1): { 100, log(2000), 10⁴ }</li>
+      <li>O(n): { n/4, 2n + 3, n/100 + log n }</li>
+      <li>O(n²): { n² + n, 2n², n² + log n }</li>
+    </ul>
+    <p><strong>Note:</strong> O(n²) includes all lower complexities like O(n).</p>
+  </section>
+
+  <section>
+    <h2>3. Omega Notation (Ω-Notation)</h2>
+    <h3>Best Case Complexity – Lower Bound</h3>
+    <p>
+      Omega notation expresses the <strong>minimum amount of time</strong> an algorithm will take for a given input size. It gives the lower bound.
+    </p>
+    <p>
+      A function f(n) is said to be Ω(g(n)) if there exist constants <em>c</em> and <em>n₀</em> such that:
+    </p>
+    <pre>
+0 ≤ c · g(n) ≤ f(n) for all n ≥ n₀
+    </pre>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li>Ω(n²): { n² + n, 2n², n² + log n }</li>
+      <li>Ω(n): { n/4, 2n + 3, n/100 + log n }</li>
+      <li>Ω(1): { 100, log(2000), 10⁴ }</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Properties of Asymptotic Notations</h2>
+
+    <h3>1. Constant Multiplication</h3>
+    <p>If f(n) is O(g(n)), then a·f(n) is also O(g(n)) for any constant a &gt; 0.</p>
+
+    <h3>2. Transitivity</h3>
+    <p>If f(n) = O(g(n)) and g(n) = O(h(n)), then f(n) = O(h(n)).</p>
+
+    <h3>3. Reflexivity</h3>
+    <p>Every function is O, Θ, and Ω of itself.</p>
+
+    <h3>4. Symmetry (Only for Θ)</h3>
+    <p>If f(n) = Θ(g(n)), then g(n) = Θ(f(n)).</p>
+
+    <h3>5. Transpose Symmetry (Between O and Ω)</h3>
+    <p>If f(n) = O(g(n)), then g(n) = Ω(f(n)).</p>
+
+    <h3>6. Combined Properties</h3>
+    <ul>
+      <li>If f(n) = O(g(n)) and f(n) = Ω(g(n)), then f(n) = Θ(g(n))</li>
+      <li>If f(n) = O(g(n)) and d(n) = O(e(n)), then f(n) + d(n) = O(max(g(n), e(n)))</li>
+      <li>If f(n) = O(g(n)) and d(n) = O(e(n)), then f(n) · d(n) = O(g(n) · e(n))</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Beyond the Basics: Little-o and Little-Ω</h2>
+    <p><strong>Little-o (o):</strong> Represents a strict upper bound — f(n) grows strictly slower than g(n).</p>
+    <p><strong>Little-omega (ω):</strong> Represents a strict lower bound — f(n) grows strictly faster than g(n).</p>
+  </section>
+
+  <section>
+    <h2>Conclusion</h2>
+    <p>
+      At <strong>CodeOfClarity</strong>, understanding asymptotic notations is considered essential for building efficient and scalable software. These notations form the bedrock of algorithmic thinking and enable developers to make informed choices when designing or selecting algorithms for specific tasks.
+    </p>
+  </section>
+
+</body>
+
+
+</html>

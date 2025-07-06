@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA Master Handbook</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2, h3 {
+      color: #90caf9;
+    }
+    h1 {
+      font-size: 2.5rem;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 2rem;
+      border-left: 4px solid #90caf9;
+      padding-left: 0.5rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      color: #f48fb1;
+    }
+    pre, code {
+      background-color: #1e1e1e;
+      color: #c3e88d;
+      padding: 0.75rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      display: block;
+      white-space: pre-wrap;
+    }
+    a {
+      color: #81d4fa;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    .chapter {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Complete DSA Handbook</h1>
+    <div class="chapter">
+      <h2>1. Getting Started with C++ & DSA</h2>
+      <h3>Setting Up the Development Environment</h3>
+      <p>Before diving into Data Structures and Algorithms, it's crucial to set up a robust C++ development environment. Visual Studio Code is one of the most popular and lightweight code editors available. To get started:</p>
+      <ul>
+        <li>Download and install <strong>VS Code</strong> from the official site.</li>
+        <li>Install <strong>MinGW</strong> or <strong>TDM-GCC</strong> to get the g++ compiler.</li>
+        <li>Set the system path environment variable to include the bin folder of the MinGW directory.</li>
+        <li>Install the <strong>C/C++ Extension</strong> by Microsoft in VS Code.</li>
+        <li>Create tasks.json and launch.json in the .vscode folder to automate the compilation and execution process.</li>
+      </ul>
+      <h3>Compiling and Running</h3>
+      <p>You can compile your programs using the terminal inside VS Code. Here's how:</p>
+      <pre>g++ filename.cpp -o output
+./output</pre>
+      <h3>Essential Headers</h3>
+      <p>C++ provides a variety of header files for different functionalities:</p>
+      <ul>
+        <li><code>#include &lt;iostream&gt;</code> - For standard input and output operations like cin and cout.</li>
+        <li><code>#include &lt;vector&gt;</code> - To use dynamic arrays that can grow or shrink in size.</li>
+        <li><code>#include &lt;algorithm&gt;</code> - Provides functions like sort, reverse, count, find, etc., making it easier to manipulate data.</li>
+      </ul>
+      <h3>Understanding Time Complexity</h3>
+      <p>Time complexity is a theoretical estimate of how an algorithm performs as the size of the input grows. It helps us compare the efficiency of different algorithms.</p>
+      <p><strong>Big-O (O)</strong> - Describes the upper bound of the algorithm. It indicates the worst-case scenario.</p>
+      <p><strong>Big-Omega (Ω)</strong> - Represents the lower bound. It gives the best-case performance.</p>
+      <p><strong>Big-Theta (Θ)</strong> - Describes the tight bound. It captures both upper and lower bounds (i.e., average case).</p>
+      <h3>Examples of Time Complexity</h3>
+      <ul>
+        <li><strong>Constant Time O(1):</strong> Accessing a specific index in an array.</li>
+        <li><strong>Linear Time O(n):</strong> Traversing an array of n elements.</li>
+        <li><strong>Logarithmic Time O(log n):</strong> Binary search in a sorted array.</li>
+        <li><strong>Quadratic Time O(n²):</strong> Nested loops, such as comparing all pairs in an array.</li>
+        <li><strong>Exponential Time O(2^n):</strong> Recursive algorithms like solving the Towers of Hanoi or naive Fibonacci.</li>
+      </ul>
+      <h3>Why Asymptotic Analysis Matters</h3>
+      <p>Asymptotic analysis allows us to focus on the growth trend of an algorithm instead of exact execution time, which may vary across machines. It helps determine scalability and feasibility when handling large data.</p>
+      <p>For instance, an O(n log n) algorithm is far more efficient than O(n²) for large input sizes, even if the latter runs slightly faster on small inputs due to constants.</p>
+      <h3>Practice Problem - Complexity Identification</h3>
+      <p>Given the following code, determine the time complexity:</p>
+      <pre>
+for (int i = 0; i &lt; n; i++) {
+    for (int j = 0; j &lt; n; j++) {
+        cout &lt;&lt; i * j;
+    }
+}
+      </pre>
+      <p>This involves two nested loops, both running n times. Hence, time complexity is O(n²).</p>
+    </div>
+    <!-- Remaining chapters will follow similarly with full book-style content -->
+  </div>
+</body>
+</html>

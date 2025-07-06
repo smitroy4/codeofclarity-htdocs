@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structures and Algorithms - CodeOfClarity</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 320vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000000;
+      color: #e7caca;
+      line-height: 1.7;
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    body {
+      padding: 2rem;
+    }
+
+    h1, h2, h3, h4 {
+      color: #00ffc8;
+    }
+
+    a {
+      color: #90caf9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 2rem 0;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #00ffc8;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+ <h1>Getting Started with Array Data Structure</h1>
+ <p><strong>Last Updated:</strong> 05 July, 2025</p>
+
+  <section>
+    <h1>Lets Start!</h1>
+    <p>Array is a collection of items of the same variable type that are stored at contiguous memory locations. It is one of the most fundamental and widely used data structures in programming due to its simplicity and efficiency.</p>
+  </section>
+
+  <section>
+    <h2>Basic Terminologies of Array</h2>
+    <ul>
+      <li><strong>Array Index:</strong> The position of elements within the array, starting from 0.</li>
+      <li><strong>Array Element:</strong> The actual data stored at each index.</li>
+      <li><strong>Array Length:</strong> The number of elements that the array can hold.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Memory Representation of Array</h2>
+    <p>All elements in an array are stored in contiguous memory blocks. This memory layout allows constant-time access using the index, which makes operations like traversal and element access efficient.</p>
+  </section>
+
+  <section>
+    <h2>Declaration of Arrays</h2>
+    <pre>
+// Integer array
+int arr[5];
+
+// Character array
+char arr[10];
+
+// Float array
+float arr[20];
+    </pre>
+  </section>
+
+  <section>
+    <h2>Initialization of Arrays</h2>
+    <pre>
+int arr[] = {1, 2, 3, 4, 5};
+char arr[5] = {'a', 'b', 'c', 'd', 'e'};
+float arr[10] = {1.4, 2.0, 24, 5.0, 0.0};
+    </pre>
+  </section>
+
+  <section>
+    <h2>Why Do We Need Arrays?</h2>
+    <p>Arrays help in storing multiple items of the same type efficiently. Instead of creating separate variables for each item (like marks of many students), we use arrays to hold and manage all items together, which makes it easier to manipulate and maintain data.</p>
+  </section>
+
+  <section>
+    <h2>Types of Arrays</h2>
+    <h3>Based on Size</h3>
+    <h4>1. Fixed Sized Arrays</h4>
+    <p>Fixed-size arrays have a predefined size and cannot be resized during runtime. Memory is allocated statically or dynamically but remains unchanged.</p>
+    <pre>
+// Compile-time allocation
+int arr[5];
+int arr2[5] = {1, 2, 3, 4, 5};
+
+// Dynamic allocation
+int* arr = new int[5];
+    </pre>
+
+    <h4>2. Dynamic Sized Arrays</h4>
+    <p>Dynamic arrays grow or shrink in size during runtime as needed. Memory is allocated and deallocated dynamically.</p>
+    <pre>
+#include &lt;vector&gt;
+vector&lt;int&gt; v;
+    </pre>
+
+    <h3>Based on Dimensions</h3>
+    <h4>1. One-dimensional Array</h4>
+    <p>A 1D array stores elements in a linear sequence like a single row.</p>
+
+    <h4>2. Multi-dimensional Array</h4>
+    <p>Multi-dimensional arrays can represent more complex data structures like matrices or tables.</p>
+    <ul>
+      <li><strong>2D Arrays:</strong> Represent rows and columns (matrices).</li>
+      <li><strong>3D Arrays:</strong> Arrays of 2D arrays, useful in 3D modeling and scientific computations.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Operations on Arrays</h2>
+
+    <h3>1. Array Traversal</h3>
+    <p>Traversal means accessing each element of an array in a sequence.</p>
+    <p><strong>Types:</strong></p>
+    <ul>
+      <li><strong>Sequential Traversal:</strong> From index 0 to the last index.</li>
+      <li><strong>Reverse Traversal:</strong> From the last index to 0.</li>
+    </ul>
+
+    <h3>2. Insertion in Array</h3>
+    <p>Inserting an element involves shifting existing elements if not inserting at the end.</p>
+    <p><strong>Types:</strong></p>
+    <ul>
+      <li><strong>At Beginning:</strong> Shift all elements right.</li>
+      <li><strong>At Specific Index:</strong> Shift elements after the index.</li>
+      <li><strong>At End:</strong> Append (efficient for dynamic arrays).</li>
+    </ul>
+
+    <h3>3. Deletion in Array</h3>
+    <p>Deleting an element involves shifting the subsequent elements left.</p>
+    <p><strong>Types:</strong></p>
+    <ul>
+      <li><strong>At Beginning:</strong> Shift all elements left.</li>
+      <li><strong>At Specific Index:</strong> Shift only elements after the index.</li>
+      <li><strong>At End:</strong> Reduce size (in dynamic arrays).</li>
+    </ul>
+
+    <h3>4. Searching in Array</h3>
+    <p>Searching is used to locate a specific element in the array.</p>
+    <p><strong>Types:</strong></p>
+    <ul>
+      <li><strong>Linear Search:</strong> Sequentially compares each element.</li>
+      <li><strong>Binary Search:</strong> Efficient search for sorted arrays using divide-and-conquer.</li>
+    </ul>
+  </section>
+
+</body>
+
+
+
+</html>

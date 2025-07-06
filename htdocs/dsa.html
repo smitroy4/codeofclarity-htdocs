@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeOfClarity | DSA Mastery in C++</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Outfit', sans-serif;
+      background: #000000;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .hero {
+      height: 50vh;
+      background: url('https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    .hero-content {
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      background: linear-gradient(to right, #00ffc8, #00e0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .main-content-wrapper {
+      flex: 1;
+      display: flex;
+      height: 150vh;
+      overflow: hidden;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      height: auto;
+      min-height: 150vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background: #111;
+      padding: 1rem;
+      border-right: 1px solid #00ffc8;
+      height: auto;
+      max-height: 150vh;
+      overflow-y: auto;
+    }
+
+    .sidebar::-webkit-scrollbar,
+    .content::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-track,
+    .content::-webkit-scrollbar-track,
+    body::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb,
+    .content::-webkit-scrollbar-thumb,
+    body::-webkit-scrollbar-thumb {
+      background-color: #00ffc8;
+      border-radius: 10px;
+    }
+
+    .sidebar h2 {
+      color: #00ffc8;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #c8f9ff;
+      text-decoration: none;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .sidebar a:hover {
+      color: #fff;
+      text-shadow: 0 0 6px #00eaff;
+    }
+
+    .sidebar a.active {
+      color: #ffffff;
+      text-shadow: 0 0 6px #00ffc8;
+    }
+
+    .content {
+      flex-grow: 1;
+      height: auto;
+      overflow-y: auto;
+      max-height: 100vh;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 150vh;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      border-top: 1px solid #222;
+      background: #0a0a0a;
+    }
+        .chapter-group .sub-chapters {
+      margin-left: 1rem;
+      padding-left: 1rem;
+      border-left: 2px solid #00ffc8;
+    }
+
+    .chapter-group .sub-chapters a {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: #aefaff;
+    }
+
+    .chapter-group .sub-chapters a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 4px #00eaff;
+    }
+
+  </style>
+</head>
+
+<body>
+   <div id="header-placeholder"></div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Master Data Structures & Algorithms in C++</h1>
+      <p style="color:#c8f9ff; font-size:1.2rem">From zero to hero – structured DSA roadmap with clarity, visuals, code
+        & practice!</p>
+    </div>
+  </section>
+
+  <div class="main-content">
+    <div class="sidebar">
+      <h2>📘 DSA Chapters</h2>
+      <a href="chapters/dsa1.html" target="content-frame" class="active">1. Prologue</a>
+      <a href="chapters/dsa2.html" target="content-frame">2. Time Complexity and Space Complexity</a>
+      <a href="chapters/dsa3.html" target="content-frame">3. Asymptotic Notations in Algorithm Complexity Analysis</a>
+      <a href="#" target="content-frame">4. Data Structures</a>
+         <div class="sub-chapters">
+    <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.1 Getting Started with Array Data Structure</a>
+    <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.2 String in Data Structure</a>
+    <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.3 Hashing in Data Structure</a>
+     <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.4 Linked List Data Structure</a>
+    <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.5 Stack Data Structure</a>
+    <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.6 Queue Data Structure</a>
+     <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.7 Tree Data Structure</a>
+    <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.8 Graph Data Structure</a>
+    <a href="chapters/dsa4/dsa4-1.html" target="content-frame"> - 4.9 Trie Data Structure</a>
+          </div>
+      <a href="chapters/recursion.html" target="content-frame">5. Recursion</a>
+    </div>
+
+    <div class="content">
+      <iframe name="content-frame" src="chapters/dsa1.html"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 CodeOfClarity by Smit Roy | Built with 💻 + ☕ for future coders
+  </footer>
+   <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+  
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        body.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+
+</html>
